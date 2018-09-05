@@ -3,25 +3,25 @@
 #include "utn.h"
 
 
-int utn_suma(int numero1, int numero2)
+float utn_suma(float numero1, float numero2)
 {
-    int resultado;
+    float resultado;
     resultado=numero1+numero2;
     return resultado;
 }
 
-int utn_resta(int numero1, int numero2)
+float utn_resta(float numero1, float numero2)
 {
-    int resultado;
+    float resultado;
     resultado=numero1-numero2;
     return resultado;
 }
 
-int utn_division(int numero1, int numero2)
+float utn_division(float numero1, float numero2)
 {
-    int retorno;
-    int resultado;
-    if(numero1==0 || numero2==0)
+    float retorno;
+    float resultado;
+    if(numero2==0)
     {
         printf("\n_______________________________________\n");
         printf("\nNo se puede dividir por cero.");
@@ -35,37 +35,35 @@ int utn_division(int numero1, int numero2)
     return retorno;
 }
 
-int utn_multiplicacion(int numero1, int numero2)
+float utn_multiplicacion(float numero1, float numero2)
 {
-    int resultado;
+    float resultado;
     resultado=numero1*numero2;
     return resultado;
 }
 
 
-int utn_getNumero(void)
+float utn_getNumero(void)
 {
-    int aux;
-    int numero;
+    float aux;
+    float numero;
 
-        system("cls");
-        printf("Ingrese un numero: ");
-        aux=(scanf("%d",&numero));
-        fflush(stdin);
+    printf("Ingrese un numero: ");
+    aux=(scanf("%f",&numero));
+    fflush(stdin);
     while(aux!=1)
     {
-        system("cls");
         printf("ERROR.Ingrese un numero: ");
-        aux=(scanf("%d",&numero));
+        aux=(scanf("%f",&numero));
         fflush(stdin);
     }
     return numero;
 }
 
 
-int utn_factorial(int numero)
+float utn_factorial(float numero)
 {
-    int respuesta;
+    float respuesta;
     if(numero==1)
     {
         return 1;
@@ -73,7 +71,7 @@ int utn_factorial(int numero)
     if(numero<=0)
     {
         printf("\n_______________________________________\n");
-        printf("\nNo se puede factoriar cero o menor a cero.");
+        printf("\nNo se puede operar con cero, menor a cero o decimal.");
         return 0;
     }
     else
@@ -93,7 +91,7 @@ char utn_getSi_No(void)
     while(respuesta!='n' && respuesta!='s')
     {
         fflush(stdin);
-        printf("\nERROR.Ingrese s o n (minuscula): ");
+        printf("ERROR.Ingrese s o n (minuscula): ");
         scanf("%c",&respuesta);
     }
     return respuesta;
